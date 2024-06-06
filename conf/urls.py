@@ -21,5 +21,8 @@ from deposit import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.predict_fraud, name='predict_fraud'),
+    path('', views.welcome, name='welcome'),
+
+    path('predict_fraud/<str:first_name>/<str:last_name>/', views.predict_fraud, name='predict_fraud'),
+    path('predict_fraud', views.predict_fraud, name='predict_fraud'),
 ]

@@ -1,8 +1,7 @@
 from django import forms
 
 class FraudPredictionForm(forms.Form):
-    first_name = forms.CharField(max_length=100, label='Ism')
-    last_name = forms.CharField(max_length=100, label='Familiya')
+
     job = forms.ChoiceField(choices=[('admin.', 'Admin'), ('blue-collar', 'Blue-collar'), ('entrepreneur', 'Biznesmen'), ('housemaid', 'Xonadon'), ('management', 'Menejerlik'), ('retired', 'Pensioner'), ('self-employed', 'Shaxsiy korxona egasi'), ('services', 'Xizmatkor'), ('student', 'Talaba'), ('technician', 'Texnik')], label='Ish')
     marital = forms.ChoiceField(choices=[('married', 'Uylangan'), ('single', 'Yolg\'iz')], label='Oilaviy holati')
     education = forms.ChoiceField(choices=[('primary', 'Boshlangich'), ('secondary', 'O\'rta ta''lim'), ('tertiary', 'Oliy ta\'lim')], label='Ta\'lim')

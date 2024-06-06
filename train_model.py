@@ -38,7 +38,7 @@ def train_model():
     model.fit(X_train, y_train)
 
     # Save the model to a file
-    with open('raud_detection_model.pkl', 'wb') as file:
+    with open('fraud_detection_model.pkl', 'wb') as file:
         pickle.dump(model, file)
 
 if __name__ == "__main__":

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 3em;
+        }
+
+        .result-container {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2em;
+        }
+
+        .result-success {
+            color: green;
+        }
+
+        .result-failure {
+            color: red;
+        }
+
+        .green-symbol::before {
+            content: '✔';
+            color: green;
+            margin-right: 10px;
+        }
+
+        .red-symbol::before {
+            content: '✖';
+            color: red;
+            margin-right: 10px;
+        }
+
+        /* Galaxy effect */
+        body:before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse closest-side, #000000, #000030, #000000);
+            z-index: -1;
+        }
+
+        /* Star field effect */
+        body:after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            z-index: -1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result-container">
+        <p>Ism: {{ first_name }}</p>
+        <p>Familiya: {{ last_name }}</p>
+        <p>Deposit:
+            {% if prediction == "Muvaffiqiyatli" %}
+                <span class="green-symbol"></span><span class="result-success">{{ prediction }}</span>
+            {% else %}
+                <span class="red-symbol"></span><span class="result-failure">{{ prediction }}</span>
+            {% endif %}
+        </p>
+    </div>
+</body>
+</html>
