@@ -55,7 +55,7 @@ def predict_fraud(request, first_name, last_name):
 
             input_df = input_df[model_columns]  # Ensure the columns are in the same order
             prediction = model.predict(input_df)
-            prediction_result = "Muvaffaqiyatli emas"   if prediction[0] == 1 else "Muvaffiqiyatli"
+            prediction_result = "Muvaffaqiyatsiz"   if prediction[0] == 1 else "Muvaffiqiyatli"
 
             # Save the prediction to the database (if needed)
             Prediction.objects.create(prediction=prediction_result)
